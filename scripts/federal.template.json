@@ -1,0 +1,48 @@
+{
+  "_readme": "Copy this file to private/federal.json, fill it in, then run: npm run federal. private/ is git-ignored and never published.",
+  "name": "Haig Tientcheu",
+  "address": "Street, City, ST ZIP",
+  "phone": "+1 000 000 0000",
+  "email": "you@example.com",
+  "citizenship": "United States Citizen",
+  "clearance": "None / Secret (active, granted MM/YYYY)",
+  "veteransPreference": "None",
+  "federalStatus": "Not a current or former federal employee",
+  "availability": "Permanent, full-time",
+  "targetTitle": "IT Specialist (INFOSEC), GS-2210",
+  "summary": "Two to three lines that mirror the job announcement's specialized experience, with keywords such as Azure, Zero Trust, incident response, vulnerability management, KQL.",
+  "experience": [
+    {
+      "title": "Job title",
+      "employer": "Employer name",
+      "employerAddress": "City, ST",
+      "start": "MM/YYYY",
+      "end": "MM/YYYY or Present",
+      "hoursPerWeek": 40,
+      "seriesGrade": "",
+      "salary": "",
+      "supervisor": "Name, phone — may contact: Yes",
+      "duties": [
+        "Accomplishment written as Action verb + task + measurable result.",
+        "Tie each line to a specialized-experience requirement in the announcement."
+      ]
+    }
+  ],
+  "education": [
+    { "degree": "Master of Science, Cybersecurity & Information Assurance", "school": "University", "location": "City, ST", "completed": "MM/YYYY" }
+  ],
+  "certifications": [
+    { "name": "Microsoft Certified: Azure Solutions Architect Expert", "date": "MM/YYYY" },
+    { "name": "CompTIA SecurityX", "date": "MM/YYYY" },
+    { "name": "CompTIA Cybersecurity Analyst (CySA+)", "date": "MM/YYYY" }
+  ],
+  "skills": [
+    "Cloud security: Azure, Entra ID, Conditional Access, Zero Trust",
+    "Security operations: Microsoft Defender for Endpoint, KQL, incident response, vulnerability management",
+    "Infrastructure as code: Terraform, CI/CD"
+  ],
+  "additional": [
+    "Founder & President, The Way of Hope (international NGO), 2017–present",
+    "Languages: English, French"
+  ]
+}

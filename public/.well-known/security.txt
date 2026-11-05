@@ -1,0 +1,6 @@
+Contact: https://haig-tientcheu.vercel.app/en#contact
+Contact: https://www.linkedin.com/in/haig-tientcheu-05377b106/
+Expires: 2027-11-05T00:00:00.000Z
+Preferred-Languages: en, fr
+Canonical: https://haig-tientcheu.vercel.app/.well-known/security.txt
+Policy: https://haig-tientcheu.vercel.app/en#contact
