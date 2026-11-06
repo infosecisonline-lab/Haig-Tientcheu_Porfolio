@@ -26,7 +26,7 @@ export function Hero({ p, t, resumeHref, cardHref }: Props) {
           {/* One icon per role, so the specialty reads at a glance */}
           <ul className="mt-5 flex flex-wrap gap-2" aria-label={p.shortTitle}>
             {p.roles.map((r) => (
-              <li key={r.label} className="inline-flex items-center gap-2 rounded-full border border-gold-500/30 bg-gold-500/10 px-3 py-1.5 text-sm font-semibold text-gold-300">
+              <li key={r.label} className="neon inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-bold">
                 <Icon name={r.icon} size={22} />
                 {r.label}
               </li>

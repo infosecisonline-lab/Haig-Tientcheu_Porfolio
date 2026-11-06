@@ -256,6 +256,15 @@
   .share-fab[data-hidden="true"] { opacity: 0; transform: translateY(24px); pointer-events: none; }
   @media (max-width: 520px) { .share-fab .label { display: none; } .share-fab { width: 54px; padding: 0; justify-content: center; } }
 
+  /* Neon green "open to" roles: solid fill, dark navy text (contrast about 15:1) */
+  .neon {
+    background: #39ff14; color: #071226;
+    box-shadow: 0 0 0 1px rgb(57 255 20 / 0.7), 0 0 22px rgb(57 255 20 / 0.45);
+    transition: transform 200ms var(--ease-out-soft), box-shadow 200ms, background-color 200ms;
+  }
+  .neon:hover { background: #5dff3d; transform: translateY(-2px); box-shadow: 0 0 0 1px rgb(57 255 20 / 0.9), 0 0 32px rgb(57 255 20 / 0.65); }
+  .neon-tile { background: #2ad80c; box-shadow: inset 0 0 0 1.5px rgb(7 18 38 / 0.18); }
+
   .skip-link { position: absolute; left: 1rem; top: -100px; z-index: 100; background: var(--gold-500); color: var(--navy-950); padding: 0.75rem 1rem; border-radius: 10px; font-weight: 600; }
   .skip-link:focus { top: 0.75rem; }
 }
