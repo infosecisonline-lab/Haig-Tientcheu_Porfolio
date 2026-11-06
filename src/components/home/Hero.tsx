@@ -78,7 +78,7 @@ export function Hero({ p, t, resumeHref, cardHref }: Props) {
             <a href="#credentials" className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-gold-300 no-underline hover:text-gold-400">
               +{more} {t.nav.credentials.toLowerCase()} <ArrowRight size={15} aria-hidden />
             </a>
-            <pre className="kql mt-4 !text-[0.8rem] !leading-relaxed" aria-label="KQL threat hunting query">
+            <pre className="kql mt-4 hidden !text-[0.8rem] !leading-relaxed sm:block" aria-label="KQL threat hunting query">
               <code>
                 <span>DeviceProcessEvents</span>
                 {"\n"}

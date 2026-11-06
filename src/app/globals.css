@@ -102,6 +102,7 @@
   }
   .kicker::before { content: ""; width: 28px; height: 2px; background: var(--gold-500); border-radius: 2px; }
   .on-navy .kicker { color: var(--gold-400); }
+  .on-navy .lead { color: #b9c4d8; }
 
   .h-section {
     font-family: var(--font-display); font-weight: 600; letter-spacing: -0.02em; line-height: 1.08;

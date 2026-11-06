@@ -27,21 +27,27 @@ export function Experience({ p, t, resumeHref }: { p: Profile; t: Dictionary; re
           {p.jobs.map((j, i) => (
             <li key={j.title} className="relative" data-reveal style={{ ["--d" as string]: `${i * 90}ms` }}>
               <article className="card card-hover overflow-hidden">
-                <div className="flex flex-wrap items-start gap-4 border-b border-line bg-surface-2/50 p-5 sm:p-6">
-                  <span className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-white to-[#f1e9d6] shadow-md ring-1 ring-gold-500/40">
-                    <Icon name={j.icon} size={42} />
-                  </span>
-                  <div className="min-w-0 flex-1">
-                    <h3 className="m-0 text-xl font-semibold leading-snug">{j.title}</h3>
-                    <p className="m-0 mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[0.95rem]">
-                      <span className="inline-flex items-center gap-1.5 font-semibold text-gold-ink"><Building2 size={16} aria-hidden />{j.company}</span>
-                      <span className="inline-flex items-center gap-1.5 text-muted"><MapPin size={16} aria-hidden />{j.location}</span>
+                {/* Icon and dates on one row, then the title and details at full width:
+                    nothing competes for space, so it reads the same on a phone and a desktop. */}
+                <div className="border-b border-line bg-surface-2/50 p-5 sm:p-6">
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-white to-[#f1e9d6] shadow-md ring-1 ring-gold-500/40 sm:h-16 sm:w-16">
+                      <Icon name={j.icon} size={40} />
+                    </span>
+                    <p className="m-0 inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full bg-navy-900 px-3 py-1 text-sm font-semibold text-gold-300 dark:bg-gold-500 dark:text-navy-950">
+                      <CalendarDays size={15} aria-hidden /> {j.dates}
                     </p>
-                    {j.client && <p className="m-0 mt-1 text-sm text-muted">{j.client}</p>}
                   </div>
-                  <p className="m-0 inline-flex items-center gap-1.5 rounded-full bg-navy-900 px-3 py-1 text-sm font-semibold text-gold-300 dark:bg-gold-500 dark:text-navy-950">
-                    <CalendarDays size={15} aria-hidden /> {j.dates}
+                  <h3 className="m-0 mt-4 text-[1.2rem] font-semibold leading-snug sm:text-xl">{j.title}</h3>
+                  <p className="m-0 mt-2 flex items-start gap-2 text-[0.95rem] font-semibold text-gold-ink">
+                    <Building2 size={16} className="mt-[3px] shrink-0" aria-hidden />
+                    <span>{j.company}</span>
                   </p>
+                  <p className="m-0 mt-1 flex items-start gap-2 text-[0.95rem] text-muted">
+                    <MapPin size={16} className="mt-[3px] shrink-0" aria-hidden />
+                    <span>{j.location}</span>
+                  </p>
+                  {j.client && <p className="m-0 mt-2 text-sm leading-relaxed text-muted">{j.client}</p>}
                 </div>
                 <ul className="m-0 grid list-none gap-2.5 p-5 sm:p-6">
                   {j.bullets.map((b) => (
