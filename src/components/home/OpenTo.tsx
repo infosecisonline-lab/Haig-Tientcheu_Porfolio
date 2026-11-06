@@ -14,7 +14,7 @@ export function OpenTo({ p, t }: { p: Profile; t: Dictionary }) {
           <div className="grid gap-8 lg:grid-cols-[0.8fr_1.6fr] lg:items-center">
             <div>
               <p className="m-0 inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-sm font-semibold text-emerald-800 ring-1 ring-emerald-200 dark:bg-emerald-400/10 dark:text-emerald-300 dark:ring-emerald-400/30">
-                <span className="pulse-dot h-2 w-2 rounded-full bg-emerald-500" aria-hidden />
+                <span className="beacon" aria-hidden />
                 {p.badge}
               </p>
               <h2 id="open-to-title" className="mt-4 mb-0 font-display text-[clamp(1.6rem,1.2rem+1.4vw,2.25rem)] font-semibold leading-tight">

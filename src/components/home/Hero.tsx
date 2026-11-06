@@ -15,7 +15,7 @@ export function Hero({ p, t, resumeHref, cardHref }: Props) {
       <div className="container-x grid items-center gap-14 pb-16 pt-12 md:pt-16 lg:grid-cols-[1.15fr_0.85fr] lg:pb-20">
         <div className="hero-in">
           <p className="inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-sm font-medium text-[#e6eaf2]">
-            <span className="pulse-dot h-2 w-2 rounded-full bg-emerald-400" aria-hidden />
+            <span className="beacon" aria-hidden />
             {p.badge}
           </p>
 
