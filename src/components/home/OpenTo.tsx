@@ -39,10 +39,11 @@ export function OpenTo({ p, t }: { p: Profile; t: Dictionary }) {
               {o.roles.map((r) => (
                 <li
                   key={r.label}
-                  className="flex items-center gap-3 rounded-2xl border border-line bg-bg p-3.5 transition hover:-translate-y-0.5 hover:border-gold-500"
+                  className="flex items-center gap-3 rounded-2xl border border-emerald-300 bg-emerald-50 p-3.5 transition hover:-translate-y-0.5 hover:border-emerald-500 hover:shadow-[0_10px_24px_-14px_rgba(16,185,129,0.7)] dark:border-emerald-400/40 dark:bg-emerald-400/10"
                 >
-                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-white to-[#f1e9d6] shadow-sm ring-1 ring-gold-500/40">
+                  <span className="relative grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-emerald-100 to-emerald-300 shadow-sm ring-2 ring-emerald-500/70">
                     <Icon name={r.icon} size={32} />
+                    <span className="absolute -right-1 -top-1 h-3.5 w-3.5 rounded-full bg-emerald-500 ring-2 ring-white dark:ring-navy-900" aria-hidden />
                   </span>
                   <span className="font-semibold leading-snug text-ink">{r.label}</span>
                 </li>
