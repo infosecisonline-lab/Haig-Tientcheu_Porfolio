@@ -272,7 +272,6 @@ const en: Profile = {
       icon: "soc",
       title: "Security Operations Analyst & Threat Hunter",
       company: "Computer Aid Inc (CAI)",
-      client: "Client: Metropolitan Water District of Southern California (U.S. critical infrastructure)",
       location: "La Verne, CA",
       dates: "Mar 2025 – Present",
       bullets: [
@@ -555,7 +554,6 @@ const fr: Profile = {
     {
       ...en.jobs[1],
       title: "Analyste en opérations de sécurité & Threat Hunter",
-      client: "Client : Metropolitan Water District of Southern California (infrastructure critique, USA)",
       dates: "Mars 2025 – aujourd’hui",
       bullets: [
         "Surveillé et trié les alertes de sécurité issues des SIEM d’environnements critiques ; escaladé les incidents confirmés et coordonné le confinement avec les équipes internes et les partenaires MDR.",
