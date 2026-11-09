@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Download } from "lucide-react";
-import { SITE_URL, contact, resumePdf } from "@/config/site";
+import { ArrowLeft } from "lucide-react";
+import { SITE_URL, contact, resumeFiles } from "@/config/site";
 import { getProfile } from "@/content/profile";
 import { getDictionary } from "@/i18n/dictionary";
 import { hasLocale } from "@/i18n/locales";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
 import { LangSwitch } from "@/components/layout/LangSwitch";
+import { ResumeDownload } from "@/components/layout/ResumeDownload";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/resume">): Promise<Metadata> {
   const { lang } = await params;
@@ -41,9 +42,7 @@ export default async function ResumePage({ params }: PageProps<"/[lang]/resume">
         <div className="flex items-center gap-4 text-ink">
           <LangSwitch lang={lang} label={t.lang.label} text={lang === "en" ? "FR" : "EN"} />
           <ThemeToggle labels={t.theme} />
-          <a className="btn btn-gold" href={resumePdf[lang]} download>
-            <Download size={18} aria-hidden /> {t.resume.download}
-          </a>
+          <ResumeDownload files={resumeFiles[lang]} t={t} className="btn btn-gold" />
         </div>
       </div>
 

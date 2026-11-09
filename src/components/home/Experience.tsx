@@ -1,10 +1,12 @@
-import { Building2, CalendarDays, Download, MapPin } from "lucide-react";
+import { Building2, CalendarDays, MapPin } from "lucide-react";
+import type { ResumeFiles } from "@/config/site";
+import { ResumeDownload } from "@/components/layout/ResumeDownload";
 import type { Profile } from "@/content/profile";
 import type { Dictionary } from "@/i18n/dictionary";
 import { Icon } from "@/components/icons";
 import { SectionHead } from "./SectionHead";
 
-export function Experience({ p, t, resumeHref }: { p: Profile; t: Dictionary; resumeHref: string }) {
+export function Experience({ p, t, resume }: { p: Profile; t: Dictionary; resume: ResumeFiles }) {
   return (
     <section id="experience" aria-labelledby="experience-title" className="section">
       <div className="container-x grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-16">
@@ -18,9 +20,9 @@ export function Experience({ p, t, resumeHref }: { p: Profile; t: Dictionary; re
               </li>
             ))}
           </ul>
-          <a href={resumeHref} download className="btn btn-navy mt-8" data-reveal>
-            <Download size={18} aria-hidden /> {t.hero.primary}
-          </a>
+          <div className="mt-8" data-reveal>
+            <ResumeDownload files={resume} t={t} className="btn btn-navy" />
+          </div>
         </div>
 
         <ol className="m-0 grid list-none gap-6 p-0">

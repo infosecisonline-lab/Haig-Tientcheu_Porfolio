@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { resumePdf } from "@/config/site";
+import { resumeFiles } from "@/config/site";
 import { getProfile } from "@/content/profile";
 import { getDictionary } from "@/i18n/dictionary";
 import { hasLocale } from "@/i18n/locales";
@@ -25,18 +25,18 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
   const p = getProfile(lang);
   const t = getDictionary(lang);
   const card = await getCardProps(lang);
-  const resumeHref = resumePdf[lang];
+  const resume = resumeFiles[lang];
   const cardHref = `/${lang}/card`;
 
   return (
     <>
-      <SiteHeader lang={lang} t={t} resumeHref={resumeHref} />
+      <SiteHeader lang={lang} t={t} resume={resume} />
       <main id="main">
-        <Hero p={p} t={t} resumeHref={resumeHref} cardHref={cardHref} />
+        <Hero p={p} t={t} resume={resume} cardHref={cardHref} />
         <OpenTo p={p} t={t} />
-        <About p={p} t={t} resumeHref={resumeHref} cardHref={cardHref} />
+        <About p={p} t={t} resume={resume} cardHref={cardHref} />
         <Expertise p={p} t={t} />
-        <Experience p={p} t={t} resumeHref={resumeHref} />
+        <Experience p={p} t={t} resume={resume} />
         <Toolbox p={p} t={t} />
         <Credentials p={p} t={t} />
         <Projects p={p} t={t} />

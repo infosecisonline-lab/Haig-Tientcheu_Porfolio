@@ -1,10 +1,12 @@
-import { Contact, Download } from "lucide-react";
+import { Contact } from "lucide-react";
+import type { ResumeFiles } from "@/config/site";
+import { ResumeDownload } from "@/components/layout/ResumeDownload";
 import type { Profile } from "@/content/profile";
 import type { Dictionary } from "@/i18n/dictionary";
 import { CardTrigger } from "@/components/card/CardTrigger";
 import { Icon } from "@/components/icons";
 
-export function About({ p, t, resumeHref, cardHref }: { p: Profile; t: Dictionary; resumeHref: string; cardHref: string }) {
+export function About({ p, t, resume, cardHref }: { p: Profile; t: Dictionary; resume: ResumeFiles; cardHref: string }) {
   return (
     <section id="about" aria-labelledby="about-title" className="section">
       <div className="container-x grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
@@ -17,9 +19,7 @@ export function About({ p, t, resumeHref, cardHref }: { p: Profile; t: Dictionar
             ))}
           </div>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href={resumeHref} download className="btn btn-navy">
-              <Download size={18} aria-hidden /> {t.hero.primary}
-            </a>
+            <ResumeDownload files={resume} t={t} className="btn btn-navy" />
             <CardTrigger href={cardHref} className="btn btn-outline">
               <Contact size={18} aria-hidden /> {t.hero.card}
             </CardTrigger>

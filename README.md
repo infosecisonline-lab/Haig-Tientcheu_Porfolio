@@ -41,6 +41,7 @@ npm run dev                  # http://localhost:3000
 |---|---|
 | `npm run build && npm start` | Production build |
 | `npm run pdf` | Resume PDFs (site running on port 3000) |
+| `npm run docx` | Editable Word resumes (.docx), EN + FR, from the same content |
 | `npm run check` | Browser smoke test: console errors and CSP violations |
 
 ## Credits

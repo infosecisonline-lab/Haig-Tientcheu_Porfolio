@@ -116,7 +116,13 @@ const en = {
   },
   resume: {
     title: "Resume",
-    download: "Download PDF",
+    formats: {
+      choose: "Choose a format",
+      pdf: "PDF",
+      pdfHint: "Ready to send",
+      word: "Word (.docx)",
+      wordHint: "Editable, tailor it to a role",
+    },
     back: "Back to portfolio",
     summary: "Summary",
     skills: "Technical Skills",
@@ -245,7 +251,13 @@ const fr: Dictionary = {
   },
   resume: {
     title: "CV",
-    download: "Télécharger le PDF",
+    formats: {
+      choose: "Choisir un format",
+      pdf: "PDF",
+      pdfHint: "Prêt à envoyer",
+      word: "Word (.docx)",
+      wordHint: "Modifiable, à adapter au poste",
+    },
     back: "Retour au portfolio",
     summary: "Profil",
     skills: "Compétences techniques",

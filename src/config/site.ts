@@ -26,10 +26,13 @@ export const links = {
 // Not a secret: the form endpoint is visible in every visitor's browser.
 export const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_ID || "xqppjgvr";
 
-export const resumePdf = {
-  en: "/resume/Haig-Tientcheu-Resume-EN.pdf",
-  fr: "/resume/Haig-Tientcheu-CV-FR.pdf",
-} as const;
+// PDF: printed from /[lang]/resume (npm run pdf). Word: built from the same content (npm run docx).
+export type ResumeFiles = { pdf: string; docx: string };
+
+export const resumeFiles: Record<"en" | "fr", ResumeFiles> = {
+  en: { pdf: "/resume/Haig-Tientcheu-Resume-EN.pdf", docx: "/resume/Haig-Tientcheu-Resume-EN.docx" },
+  fr: { pdf: "/resume/Haig-Tientcheu-CV-FR.pdf", docx: "/resume/Haig-Tientcheu-CV-FR.docx" },
+};
 
 export const vcardPath = "/haig-tientcheu.vcf";
 

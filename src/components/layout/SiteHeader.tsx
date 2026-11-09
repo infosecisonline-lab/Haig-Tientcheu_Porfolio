@@ -2,16 +2,18 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Download, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import type { ResumeFiles } from "@/config/site";
 import type { Dictionary } from "@/i18n/dictionary";
 import type { Locale } from "@/i18n/locales";
 import { LangSwitch } from "./LangSwitch";
 import { ThemeToggle } from "./ThemeToggle";
 import { ClothBand } from "@/components/african/ClothBand";
+import { ResumeDownload } from "./ResumeDownload";
 
-type Props = { lang: Locale; t: Dictionary; resumeHref: string; solid?: boolean };
+type Props = { lang: Locale; t: Dictionary; resume: ResumeFiles; solid?: boolean };
 
-export function SiteHeader({ lang, t, resumeHref, solid = false }: Props) {
+export function SiteHeader({ lang, t, resume, solid = false }: Props) {
   const [scrolled, setScrolled] = useState(solid);
   const [open, setOpen] = useState(false);
   const home = `/${lang}`;
@@ -66,9 +68,14 @@ export function SiteHeader({ lang, t, resumeHref, solid = false }: Props) {
           <span className="grid h-10 w-10 place-items-center rounded-full hover:text-gold-300 [&_button]:cursor-pointer">
             <ThemeToggle labels={t.theme} />
           </span>
-          <a href={resumeHref} download className="btn btn-gold ml-1 hidden !min-h-[42px] !px-4 text-sm md:inline-flex">
-            <Download size={17} aria-hidden /> {t.nav.resume}
-          </a>
+          <ResumeDownload
+            files={resume}
+            t={t}
+            label={t.nav.resume}
+            iconSize={17}
+            wrapperClassName="ml-1 hidden md:block"
+            className="btn btn-gold !min-h-[42px] !px-4 text-sm"
+          />
           <button
             type="button"
             className="grid h-11 w-11 place-items-center rounded-full text-[#f5f1e6] hover:bg-white/10 lg:hidden"
@@ -99,9 +106,7 @@ export function SiteHeader({ lang, t, resumeHref, solid = false }: Props) {
               </li>
             ))}
             <li className="pt-2">
-              <a href={resumeHref} download className="btn btn-gold w-full">
-                <Download size={18} aria-hidden /> {t.hero.primary}
-              </a>
+              <ResumeDownload files={resume} t={t} className="btn btn-gold w-full" />
             </li>
           </ul>
         </nav>

@@ -1,13 +1,15 @@
-import { ArrowRight, Contact, Download, ShieldCheck } from "lucide-react";
+import { ArrowRight, Contact, ShieldCheck } from "lucide-react";
 import type { Profile } from "@/content/profile";
 import type { Dictionary } from "@/i18n/dictionary";
 import { CardTrigger } from "@/components/card/CardTrigger";
 import { Icon } from "@/components/icons";
 import { ClothBand } from "@/components/african/ClothBand";
+import type { ResumeFiles } from "@/config/site";
+import { ResumeDownload } from "@/components/layout/ResumeDownload";
 
-type Props = { p: Profile; t: Dictionary; resumeHref: string; cardHref: string };
+type Props = { p: Profile; t: Dictionary; resume: ResumeFiles; cardHref: string };
 
-export function Hero({ p, t, resumeHref, cardHref }: Props) {
+export function Hero({ p, t, resume, cardHref }: Props) {
   const top = p.certifications.slice(0, 4);
   const more = p.certifications.length - top.length;
   return (
@@ -45,9 +47,7 @@ export function Hero({ p, t, resumeHref, cardHref }: Props) {
           </ul>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <a href={resumeHref} download className="btn btn-gold">
-              <Download size={19} aria-hidden /> {t.hero.primary}
-            </a>
+            <ResumeDownload files={resume} t={t} className="btn btn-gold" iconSize={19} />
             <a href="#experience" className="btn btn-ghost-light">
               {t.nav.experience} <ArrowRight size={18} aria-hidden />
             </a>

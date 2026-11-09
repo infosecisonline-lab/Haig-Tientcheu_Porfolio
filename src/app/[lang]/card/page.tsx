@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { CardView } from "@/components/card/CardView";
 import { getCardProps } from "@/components/card/getCardProps";
 import { SiteHeader } from "@/components/layout/SiteHeader";
-import { resumePdf } from "@/config/site";
+import { resumeFiles } from "@/config/site";
 import { getDictionary } from "@/i18n/dictionary";
 import { hasLocale } from "@/i18n/locales";
 
@@ -23,7 +23,7 @@ export default async function CardPage({ params }: PageProps<"/[lang]/card">) {
   const card = await getCardProps(lang, true);
   return (
     <>
-      <SiteHeader lang={lang} t={getDictionary(lang)} resumeHref={resumePdf[lang]} solid />
+      <SiteHeader lang={lang} t={getDictionary(lang)} resume={resumeFiles[lang]} solid />
       <main id="main" className="card-page navy-grid relative">
         <div className="card-shell">
           <CardView {...card} />
