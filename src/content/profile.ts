@@ -62,7 +62,8 @@ export type Profile = {
   capabilities: Capability[];
   jobs: Job[];
   toolbox: { icon: IconKey; label: string; items: string[] }[];
-  certifications: { icon: IconKey; name: string; issuer: string }[];
+  // verifyUrl: the credential's public page on the issuer's site (opens from the portfolio)
+  certifications: { icon: IconKey; name: string; issuer: string; verifyUrl?: string }[];
   education: { degree: string; school: string }[];
   vibe: { icon: IconKey; name: string; use: string }[];
   vibeStats: { value: string; label: string }[];
@@ -82,15 +83,20 @@ export type Profile = {
   vcardNote: string;
 };
 
+// Verification pages: Microsoft Learn credential pages and CompTIA (CertMetrics) verification codes,
+// all public and checked on 2026-11-16. SSCP has no public link yet.
+const msLearn = (id: string) => `https://learn.microsoft.com/en-us/users/HAIGVERONESETIENTCHEU-1211/credentials/${id}`;
+const comptia = (code: string) => `https://cp.certmetrics.com/CompTIA/en/public/verify/credential/${code}`;
+
 const certifications: Profile["certifications"] = [
-  { icon: "azure", name: "Microsoft Certified: Azure Solutions Architect Expert", issuer: "Microsoft" },
-  { icon: "server", name: "Microsoft Certified: Azure Administrator Associate", issuer: "Microsoft" },
-  { icon: "securityx", name: "CompTIA SecurityX (CASP+)", issuer: "CompTIA" },
-  { icon: "pentest", name: "CompTIA PenTest+ ce", issuer: "CompTIA" },
-  { icon: "cysa", name: "CompTIA CySA+ ce", issuer: "CompTIA" },
-  { icon: "secplus", name: "CompTIA Security+ ce", issuer: "CompTIA" },
-  { icon: "netplus", name: "CompTIA Network+ ce", issuer: "CompTIA" },
-  { icon: "project", name: "CompTIA Project+ ce", issuer: "CompTIA" },
+  { icon: "azure", name: "Microsoft Certified: Azure Solutions Architect Expert", issuer: "Microsoft", verifyUrl: msLearn("6A936C44B3C311CD") },
+  { icon: "server", name: "Microsoft Certified: Azure Administrator Associate", issuer: "Microsoft", verifyUrl: msLearn("4BB3CD75BDB1E17C") },
+  { icon: "securityx", name: "CompTIA SecurityX (CASP+)", issuer: "CompTIA", verifyUrl: comptia("e1a9e1ef1ab248aaaf62202929c9d7bb") },
+  { icon: "pentest", name: "CompTIA PenTest+ ce", issuer: "CompTIA", verifyUrl: comptia("79ZE4TGYEN4Q1WKZ") },
+  { icon: "cysa", name: "CompTIA CySA+ ce", issuer: "CompTIA", verifyUrl: comptia("BMKYZSS5L21112G0") },
+  { icon: "secplus", name: "CompTIA Security+ ce", issuer: "CompTIA", verifyUrl: comptia("269JFRCQCF411CCC") },
+  { icon: "netplus", name: "CompTIA Network+ ce", issuer: "CompTIA", verifyUrl: comptia("N18J4LGQVMBE1B92") },
+  { icon: "project", name: "CompTIA Project+ ce", issuer: "CompTIA", verifyUrl: comptia("a465ca6735334fce9c4b964f975986ef") },
   { icon: "sscp", name: "Systems Security Certified Practitioner (SSCP)", issuer: "ISC2" },
 ];
 

@@ -1,4 +1,4 @@
-import { ArrowRight, Contact, ShieldCheck } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Contact, ShieldCheck } from "lucide-react";
 import type { Profile } from "@/content/profile";
 import type { Dictionary } from "@/i18n/dictionary";
 import { CardTrigger } from "@/components/card/CardTrigger";
@@ -66,12 +66,22 @@ export function Hero({ p, t, resume, cardHref }: Props) {
             </div>
             <ul className="mt-5 grid gap-2.5">
               {top.map((c) => (
-                <li key={c.name} className="flex items-center gap-3 rounded-2xl bg-white/[0.04] px-4 py-2.5">
-                  <Icon name={c.icon} size={44} />
-                  <span className="min-w-0">
-                    <span className="block text-[0.95rem] font-semibold leading-snug text-[#f8f4ea]">{c.name.replace("Microsoft Certified: ", "")}</span>
-                    <span className="block text-xs text-[#9fb0cc]">{c.issuer}</span>
-                  </span>
+                <li key={c.name}>
+                  <a
+                    href={c.verifyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={t.credentials.verifyLabel}
+                    aria-label={`${c.name}, ${c.issuer}. ${t.credentials.verifyLabel}`}
+                    className="group flex items-center gap-3 rounded-2xl bg-white/[0.04] px-4 py-2.5 no-underline transition-colors hover:bg-white/[0.09]"
+                  >
+                    <Icon name={c.icon} size={44} />
+                    <span className="min-w-0 flex-1">
+                      <span className="block text-[0.95rem] font-semibold leading-snug text-[#f8f4ea]">{c.name.replace("Microsoft Certified: ", "")}</span>
+                      <span className="block text-xs text-[#9fb0cc]">{c.issuer}</span>
+                    </span>
+                    <ArrowUpRight size={17} aria-hidden className="shrink-0 text-gold-400 opacity-60 transition-opacity group-hover:opacity-100" />
+                  </a>
                 </li>
               ))}
             </ul>

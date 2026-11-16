@@ -1,3 +1,4 @@
+import { ArrowUpRight } from "lucide-react";
 import type { Profile } from "@/content/profile";
 import type { Dictionary } from "@/i18n/dictionary";
 import { Icon } from "@/components/icons";
@@ -10,23 +11,44 @@ export function Credentials({ p, t }: { p: Profile; t: Dictionary }) {
         <SectionHead id="credentials-title" center {...t.sections.credentials} />
 
         <ul className="mt-12 grid list-none gap-4 p-0 sm:grid-cols-2 lg:grid-cols-3">
-          {p.certifications.map((c, i) => (
-            <li
-              key={c.name}
-              className="card card-hover group relative flex items-center gap-4 overflow-hidden p-5"
-              data-reveal
-              style={{ ["--d" as string]: `${(i % 3) * 80}ms` }}
-            >
-              <span className="absolute inset-y-0 left-0 w-1.5 bg-gradient-to-b from-gold-400 to-gold-600" aria-hidden />
-              <Icon name={c.icon} size={76} className="drop-shadow-md transition-transform duration-300 group-hover:scale-105" />
-              <span className="min-w-0">
-                <span className="block font-semibold leading-snug text-ink">{c.name}</span>
-                <span className="mt-1 block text-sm font-medium text-gold-ink">
-                  {t.credentials.issuer} {c.issuer}
+          {p.certifications.map((c, i) => {
+            const body = (
+              <>
+                <span className="absolute inset-y-0 left-0 w-1.5 bg-gradient-to-b from-gold-400 to-gold-600" aria-hidden />
+                <Icon name={c.icon} size={76} className="drop-shadow-md transition-transform duration-300 group-hover:scale-105" />
+                <span className="min-w-0">
+                  <span className="block font-semibold leading-snug text-ink">{c.name}</span>
+                  <span className="mt-1 block text-sm font-medium text-gold-ink">
+                    {t.credentials.issuer} {c.issuer}
+                  </span>
+                  {c.verifyUrl && (
+                    <span className="mt-1.5 inline-flex items-center gap-1 text-sm font-semibold text-link group-hover:underline">
+                      {t.credentials.verify} <ArrowUpRight size={15} aria-hidden />
+                    </span>
+                  )}
                 </span>
-              </span>
-            </li>
-          ))}
+              </>
+            );
+            const cls = "card card-hover group relative flex h-full items-center gap-4 overflow-hidden p-5";
+            return (
+              <li key={c.name} data-reveal style={{ ["--d" as string]: `${(i % 3) * 80}ms` }}>
+                {c.verifyUrl ? (
+                  <a
+                    href={c.verifyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={t.credentials.verifyLabel}
+                    aria-label={`${c.name}, ${c.issuer}. ${t.credentials.verifyLabel}`}
+                    className={`${cls} no-underline`}
+                  >
+                    {body}
+                  </a>
+                ) : (
+                  <div className={cls}>{body}</div>
+                )}
+              </li>
+            );
+          })}
         </ul>
 
         <ul className="mt-8 grid list-none gap-4 p-0 md:grid-cols-3">

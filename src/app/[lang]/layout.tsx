@@ -90,6 +90,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
     hasCredential: p.certifications.map((c) => ({
       "@type": "EducationalOccupationalCredential",
       name: c.name,
+      ...(c.verifyUrl ? { url: c.verifyUrl } : {}),
       recognizedBy: { "@type": "Organization", name: c.issuer },
     })),
     alumniOf: [

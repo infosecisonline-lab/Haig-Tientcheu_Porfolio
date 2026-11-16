@@ -75,7 +75,7 @@ const en = {
     reset: "Show all",
   },
   work: { visit: "Visit the site", security: "Security by design", stack: "Stack", highlights: "Highlights", role: "Role" },
-  credentials: { issuer: "Issued by", degree: "Degree" },
+  credentials: { issuer: "Issued by", degree: "Degree", verify: "Verify", verifyLabel: "Verify on the issuer’s website (opens in a new tab)" },
   contact: {
     heading: "Send a message",
     sentence: "Roles, security reviews, SaaS builds or partnerships.",
@@ -210,7 +210,7 @@ const fr: Dictionary = {
     reset: "Tout afficher",
   },
   work: { visit: "Visiter le site", security: "Sécurité dès la conception", stack: "Stack", highlights: "Points forts", role: "Rôle" },
-  credentials: { issuer: "Délivrée par", degree: "Diplôme" },
+  credentials: { issuer: "Délivrée par", degree: "Diplôme", verify: "Vérifier", verifyLabel: "Vérifier sur le site de l’organisme (nouvel onglet)" },
   contact: {
     heading: "Envoyer un message",
     sentence: "Postes, audits de sécurité, création de SaaS ou partenariats.",
