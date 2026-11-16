@@ -1,5 +1,5 @@
 {
-  "_readme": "Copy this file to private/federal.json, fill it in, then run: npm run federal. private/ is git-ignored and never published.",
+  "_readme": "Copy this file to private/federal.json, fill it in, then run: npm run federal. private/ is git-ignored and never published. Output: PDF and Word (.docx). Write [FILL IN: ...] for anything you will complete later: it is highlighted in yellow.",
   "name": "Haig Tientcheu",
   "address": "Street, City, ST ZIP",
   "phone": "+1 000 000 0000",
@@ -28,13 +28,37 @@
       ]
     }
   ],
+  "projects": [
+    {
+      "title": "Project or lab name",
+      "organization": "Self-directed / role, tools used",
+      "dates": "MM/YYYY – MM/YYYY (optional)",
+      "duties": [
+        "What you built and the security result."
+      ]
+    }
+  ],
   "education": [
-    { "degree": "Master of Science, Cybersecurity & Information Assurance", "school": "University", "location": "City, ST", "completed": "MM/YYYY" }
+    {
+      "degree": "Master of Science, Cybersecurity & Information Assurance",
+      "school": "University",
+      "location": "City, ST",
+      "completed": "MM/YYYY"
+    }
   ],
   "certifications": [
-    { "name": "Microsoft Certified: Azure Solutions Architect Expert", "date": "MM/YYYY" },
-    { "name": "CompTIA SecurityX", "date": "MM/YYYY" },
-    { "name": "CompTIA Cybersecurity Analyst (CySA+)", "date": "MM/YYYY" }
+    {
+      "name": "Microsoft Certified: Azure Solutions Architect Expert",
+      "date": "MM/YYYY"
+    },
+    {
+      "name": "CompTIA SecurityX",
+      "date": "MM/YYYY"
+    },
+    {
+      "name": "CompTIA Cybersecurity Analyst (CySA+)",
+      "date": "MM/YYYY"
+    }
   ],
   "skills": [
     "Cloud security: Azure, Entra ID, Conditional Access, Zero Trust",

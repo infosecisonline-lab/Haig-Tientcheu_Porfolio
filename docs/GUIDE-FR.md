@@ -29,7 +29,7 @@ Les éléments marqués `TO CONFIRM` / `À CONFIRMER` doivent être remplacés a
 |---|---|
 | `npm run pdf` | CV PDF EN + FR dans `public/resume/` (le site doit tourner sur le port 3000) |
 | `npm run docx` | CV Word modifiables (.docx) EN + FR dans `public/resume/`, même contenu que le PDF |
-| `npm run federal` | CV fédéral USAJOBS **privé** dans `private/` (à partir de `private/federal.json`, voir `scripts/federal.template.json`) |
+| `npm run federal` | CV fédéral USAJOBS **privé** (PDF + Word) dans `private/` (à partir de `private/federal.json`, voir `scripts/federal.template.json`) |
 | `npm run capture` | Nouvelles captures d'écran + vidéo de SongFromWithin et StokNextra |
 | `npm run icons` | Icônes « HT » |
 | `npm run check` | Test navigateur : erreurs console / CSP + captures dans `.taste-skill/check/` |
